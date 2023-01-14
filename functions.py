@@ -34,6 +34,7 @@ class Matrix:
         if not self.isSquare:
             return
         
+        
 
     def get_eigenvalues(self) -> float:
         if not self.isSquare:
