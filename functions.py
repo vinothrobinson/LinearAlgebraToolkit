@@ -15,4 +15,4 @@ def scalar_mult():
 
 
 def matrix_addition():
-    pass
+    print('hi')
