@@ -18,25 +18,26 @@ def scalar_mult(matrix: Matrix, scalar: float) -> Matrix:
     return result
 
 
-def matrix_addition(self, other):
-    # newMatrix = Matrix(self.nun)
-    if (self.num_of_cols != other.num_of_cols) or (self.num_of_rows != other.num_of_rows):
-        return
-    for i in range(num_of_rows):
-        for j in range(num_of_cols):
-            self.matrix[i][j] += other.matrix[i][j]
+def matrix_addition(matrix1: Matrix, matrix2: Matrix) -> Matrix:
+    result = matrix1
+    if (matrix1.num_of_cols != matrix2.num_of_cols) or (matrix1.num_of_rows != matrix2.num_of_rows):
+        return None
+    for i in range(matrix1.num_of_rows):
+        for j in range(matrix1.num_of_cols):
+            result.matrix[i][j] += matrix2.matrix[i][j]
 
 
-def matrix_mult(self, other):
-    if (self.num_of_cols != other.num_of_rows) or (self.num_of_rows != other.num_of_cols):
-        return
-    newMatrix = Matrix(self.num_of_rows, other.num_of_cols)
-    for i in range(self.num_of_rows):  # Initializing all the elements in the matrix to 0
-        for j in range(other.num_of_cols):
-            newMatrix[i].append(0)
-    for i in range(self.num_of_rows):  # Matrix Multiplication computation
-        for j in range(self.num_of_cols):
-            newMatrix.matrix[i][j] += self.matrix[i][j] * other.matrix[j][i]
+def matrix_mult(matrix1: Matrix, matrix2: Matrix) -> Matrix:
+    if matrix1.num_of_cols != matrix2.num_of_rows:
+        return None
+    result = Matrix(matrix1.num_of_rows, matrix2.num_of_cols)
+    for i in range(matrix1.num_of_rows):  # Initializing all the elements in the matrix to 0
+        for j in range(matrix2.num_of_cols):
+            result.matrix[i].append(0)
+    for i in range(matrix1.num_of_rows):  # Matrix Multiplication computation
+        for j in range(matrix1.num_of_cols):
+            result.matrix[i][j] += matrix1.matrix[i][j] * matrix2.matrix[j][i]
+    return result
 
 
 def det(self) -> float:
