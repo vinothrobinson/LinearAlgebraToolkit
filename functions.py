@@ -40,10 +40,29 @@ def matrix_mult(matrix1: Matrix, matrix2: Matrix) -> Matrix:
     return result
 
 
-def det(self) -> float:
-    if not self.isSquare:
-        return
+def det(matrix: Matrix, sum = 0: int) -> float:
+    if not matrix.isSquare:
+        return None
+    if (matrix.num_of_rows > 2):
+        for i in range(matrix.num_of_rows):
+            for j in range(matrix.num_of_cols):
+                sum += (-1)**(i + j)*det(helperDet(matrix, i, j), sum)
+    if (matrix.num_of_rows == 2):
+        sum += (matrix.matrix[0][0] * matrix.matrix[1][1]) - (matrix.matrix[0][1] * matrix.matrix[1][0])
+    if (matrix.num_of_rows == 1):
+        sum += matrix.matrix[0][0]
+    return sum
 
+def helperDet(matrix: Matrix, rows: int, cols: int) -> Matrix:
+    result = Matrix(matrix.num_of_rows, matrix.num_of_cols)
+    indX, indY = 0
+    for i in range(result.num_of_rows):
+        for j in range(result.num_of_cols):
+            if (i != rows) and (j != cols):
+                result.matrix[i][j] = matrix.matrix[indX][indY]
+                indX += 1
+                indY += 1
+    return result
 
 def get_eigenvalues(self) -> float:
     if not self.isSquare:
