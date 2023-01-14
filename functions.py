@@ -51,19 +51,16 @@ def get_eigenvalues(self) -> float:
 
 
 class Window:
-    root = tk.Tk()
-    root.geometry('1000x800')
-    main_frame = ttk.Frame(root)
-    main_frame['padding'] = (50, 10, 50, 10)
-    main_frame.pack()
+    def __init__(self, ):
+        root = tk.Tk()
+        root.geometry('1000x800')
+        main_frame = ttk.Frame(root)
+        main_frame['padding'] = (50, 10, 50, 10)
+        main_frame.pack()
 
-    scalar_mult_button = ttk.Button(main_frame, text='Scalar Multiplication')
-    scalar_mult_button.pack()
-    root.mainloop()
-
-
-def main():
-    window = Window()
+        scalar_mult_button = ttk.Button(main_frame, text='Scalar Multiplication', command=lambda: 5+5) # ignore the lambda
+        scalar_mult_button.pack()
+        root.mainloop()
 
 
-main()
+Window()
