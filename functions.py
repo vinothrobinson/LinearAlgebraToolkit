@@ -1,5 +1,17 @@
 def scalar_mult():
-    pass
+    print("karl")
+    print("karl")
+    print("karl")
+    print("karl")
+    print("karl")
+    print("karl")
+    print("karl")
+    print("karl")
+    print("karl")
+    print("karl")
+    print("karl")
+    print("karl")
+    print("karl")
 
 
 def matrix_addition():
