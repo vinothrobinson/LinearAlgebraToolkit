@@ -73,7 +73,7 @@ def get_eigenvalues(self) -> float:
 class Window:
     def __init__(self, ):
         root = tk.Tk()
-        root.geometry('1000x800')
+        root.geometry('1000x750')
         main_frame = ttk.Frame(root)
         main_frame['padding'] = (50, 10, 50, 10)
         main_frame.pack()
