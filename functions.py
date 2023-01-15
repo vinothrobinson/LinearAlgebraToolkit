@@ -40,7 +40,8 @@ def matrix_mult(matrix1: Matrix, matrix2: Matrix) -> Matrix:
     return result
 
 
-def det(matrix: Matrix, sum = 0: int) -> float:
+def det(matrix: Matrix) -> float:
+    sum = 0
     if not matrix.isSquare:
         return None
     if (matrix.num_of_rows > 2):
